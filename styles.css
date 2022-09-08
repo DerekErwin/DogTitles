@@ -1,0 +1,25 @@
+/* Entire Page */
+* {
+    background-color: #94a5bd;
+    border: 0px solid rgb(212, 37, 37);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #1F2937;
+    display: flex;
+}
+
+.navbar-logo {
+    flex: 1;
+    margin-left: 10%;
+    color: #F9FAF8;
+    font-size: 24px;
+    font-weight: 700;
+    max-width: 150px;
+}
