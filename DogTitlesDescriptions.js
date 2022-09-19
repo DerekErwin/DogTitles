@@ -451,7 +451,7 @@ function descriptions(string) {
 
   if (description !== "") {
     output = output.concat(description);
-  } else {
+  } else if (string) {
     console.error(`No description for ${string}`);
 
 	let row = noTitles.insertRow();
