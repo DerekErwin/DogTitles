@@ -379,7 +379,7 @@ const titleDescriptions = [
 // test data: 
 //let titles =  ["CD", "thing", "REX", "RNX", "RNC", "5839", "AKC", "RN", "CGC", "TKI", "test1", "**ETD**", "**ATD-M**", "ITD-M"];
 
-let input = prompt("Put in titles with spaces. (Example: ​CD REX RNX RNC AKC RN CGC TKI)").replace(/[^a-z0-9 ]/gi, '').toUpperCase();
+let input = prompt("Put in titles with spaces. (Example: ​CD REX RNX RNC AKC RN CGC TKI)").replace(/[^a-z0-9 -]/gi, '').toUpperCase();
 let titles = input.split(" ");
 let output = "";
 let outputTable = [];
@@ -471,7 +471,7 @@ console.log("Table Len:" + noTitles.rows.length);
 // sortTable(tableTitles, 2);
 // sortTable(tableTitles, 1);
 
-if(noTitles.rows.length > 2){
+if(noTitles.rows.length > 1){
 	noTitles.removeAttribute("hidden");
 }else{
 	noTitles.setAttribute("hidden", "hidden");
