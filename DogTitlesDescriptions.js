@@ -386,8 +386,50 @@ let outputTable = [];
 let noDescription = "";
 console.log(`Getting descriptions for ${titles}`);
 
+let titlesHeader = document.getElementById("titlesHeader");
+let instructions = document.getElementById("instructions");
 let noTitles = document.getElementById("noTitles");
 let tableTitles = document.getElementById("tableTitles");
+
+function compareValues(a, b) {
+	// for table sorting
+	// https://stackoverflow.com/questions/55462632/javascript-sort-table-column-on-click
+	// return -1/0/1 based on what you "know" a and b are here.
+	return (a<b) ? -1 : (a>b) ? 1 : 0;
+}
+
+function sortTable(table, colnum) {
+	// get all the rows in this table:
+	let rows = Array.from(table.querySelectorAll(`tr`));
+  
+	// but ignore the heading row:
+	rows = rows.slice(1);
+  
+	// set up the queryselector for getting the indicated
+	// column from a row, so we can compare using its value:
+	let qs = `td:nth-child(${colnum})`;
+  
+	// and then just... sort the rows:
+	rows.sort( (r1,r2) => {
+	  // get each row's relevant column
+	  let t1 = r1.querySelector(qs);
+	  let t2 = r2.querySelector(qs);
+  
+	  // and then effect sorting by comparing their content:
+	  return compareValues(t1.textContent,t2.textContent);
+	});
+  
+	// and then the magic part that makes the sorting appear on-page:
+	rows.forEach(row => table.appendChild(row));
+}
+
+tableTitles.querySelectorAll(`th`).forEach((th, position) => {
+	th.addEventListener(`click`, evt => sortTable(tableTitles, position + 1));
+});
+
+noTitles.querySelectorAll(`th`).forEach((th, position) => {
+	th.addEventListener(`click`, evt => sortTable(noTitles, position + 1));
+});
 
 function descriptions(string) {
   let description = "";
@@ -424,10 +466,25 @@ consoleOutput = 0; // 0 = console, 1 = table
 
 console.log("Table Len:" + noTitles.rows.length);
 
+// sortTable(noTitles, 1);
+
+// sortTable(tableTitles, 2);
+// sortTable(tableTitles, 1);
+
 if(noTitles.rows.length > 2){
 	noTitles.removeAttribute("hidden");
 }else{
 	noTitles.setAttribute("hidden", "hidden");
+}
+
+if(tableTitles.rows.length > 1){
+	titlesHeader.removeAttribute("hidden");
+	tableTitles.removeAttribute("hidden");
+	instructions.innerText = "Click table headers to sort by that column:";
+}else{
+	titlesHeader.setAttribute("hidden", "hidden");
+	tableTitles.setAttribute("hidden", "hidden");
+	instructions.innerText = "No titles were found.";
 }
 
 if (consoleOutput == 0){
