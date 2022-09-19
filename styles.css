@@ -1,10 +1,10 @@
 /* Entire Page */
 * {
-    background-color: #D6CCA9;
     /* border: 0px solid rgb(212, 37, 37); */
 }
 
 body {
+    background-color: #D6CCA9;
     /* margin: 0; */
     padding: 10px;
 }

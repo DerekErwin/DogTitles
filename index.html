@@ -10,18 +10,25 @@
 </head>
 
 <body>
+  <label for="titlesInput">Put in titles with spaces. (Example: ​CD REX RNX RNC AKC RN CGC TKI)</label><br>
+  <input type="text" id="titlesInput" name="titlesInput" size="66"><br>
+  <button id="titleCheckBtn">Get Titles</button><br><br>
+
   <table id="noTitles" hidden>
     <th>Couldn't find these titles:</th>
   </table>
   <br>
-  <h1 id="titlesHeader">Titles:</h1>
-  <div id="instructions">Put Titles into popup box</div>
+
+  <h1 id="titlesHeader" hidden>Titles:</h1>
+  <div id="instructions" hidden></div>
   <br>
-  <table id="tableTitles">
+
+  <table id="tableTitles" hidden>
     <th>Type</th>
     <th>Name</th>
     <th>Description</th>
   </table>
+  <br>
 
   <script src="DogTitlesDescriptions.js"></script>
 </body>
