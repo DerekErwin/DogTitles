@@ -1,7 +1,4 @@
 /* Entire Page */
-* {
-    /* border: 0px solid rgb(212, 37, 37); */
-}
 
 body {
     background-color: #D6CCA9;
@@ -12,3 +9,9 @@ body {
 table, th, td {
     border:1px solid black;
   }
+
+td {
+    padding-top: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
