@@ -386,6 +386,9 @@ let outputTable = [];
 let noDescription = "";
 console.log(`Getting descriptions for ${titles}`);
 
+let noTitles = document.getElementById("noTitles");
+let tableTitles = document.getElementById("tableTitles");
+
 function descriptions(string) {
   let description = "";
 
@@ -393,6 +396,14 @@ function descriptions(string) {
     if(string == titleDescriptions[i]){
       description += `${titleDescriptions[i - 1]} - ${titleDescriptions[i]} - ${titleDescriptions[i + 1]} \n`;
 	  outputTable.push({Type:titleDescriptions[i - 1], Name:titleDescriptions[i], Description:titleDescriptions[i + 1]});
+	  let row = tableTitles.insertRow();
+	  let cell1 = row.insertCell(0);
+	  let cell2 = row.insertCell(1);
+	  let cell3 = row.insertCell(2);
+
+	  cell1.innerHTML = `${titleDescriptions[i - 1]}`;
+	  cell2.innerHTML = `${titleDescriptions[i]}`;
+	  cell3.innerHTML = `${titleDescriptions[i + 1]}`;
     }
   }
 
@@ -400,12 +411,24 @@ function descriptions(string) {
     output = output.concat(description);
   } else {
     console.error(`No description for ${string}`);
+
+	let row = noTitles.insertRow();
+	let cell1 = row.insertCell(0);
+	cell1.innerHTML = `${string}`;
   }
 }
 
 titles.map(descriptions);
 
 consoleOutput = 0; // 0 = console, 1 = table
+
+console.log("Table Len:" + noTitles.rows.length);
+
+if(noTitles.rows.length > 2){
+	noTitles.removeAttribute("hidden");
+}else{
+	noTitles.setAttribute("hidden", "hidden");
+}
 
 if (consoleOutput == 0){
 	console.log(output);
