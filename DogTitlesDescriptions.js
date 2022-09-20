@@ -846,9 +846,9 @@ function descriptions(string) {
 			let cell4 = row.insertCell(3);
 
 			cell1.innerHTML = `${titleDescriptions[i - 2]}`;
-			cell1.innerHTML = `${titleDescriptions[i - 2]}`;
-			cell2.innerHTML = `${titleDescriptions[i]}`;
-			cell3.innerHTML = `${titleDescriptions[i + 1]}`;
+			cell2.innerHTML = `${titleDescriptions[i - 1]}`;
+			cell3.innerHTML = `${titleDescriptions[i]}`;
+			cell4.innerHTML = `${titleDescriptions[i + 1]}`;
 		}
 	}
 
