@@ -831,23 +831,23 @@ function clearTable(table) {
 }
 
 function descriptions(string) {
-
 	let description = "";
+	if (string !== "") {
+		for (let i = 0; i < titleDescriptions.length; i++) {
+			if (string == titleDescriptions[i]) {
+				description += `${titleDescriptions[i - 1]} - ${titleDescriptions[i]} - ${titleDescriptions[i + 1]} \n`;
+				outputTable.push({ Type: titleDescriptions[i - 1], Name: titleDescriptions[i], Description: titleDescriptions[i + 1] });
+				let row = tableTitles.insertRow();
+				let cell1 = row.insertCell(0);
+				let cell2 = row.insertCell(1);
+				let cell3 = row.insertCell(2);
+				let cell4 = row.insertCell(3);
 
-	for (let i = 0; i < titleDescriptions.length; i++) {
-		if (string == titleDescriptions[i]) {
-			description += `${titleDescriptions[i - 1]} - ${titleDescriptions[i]} - ${titleDescriptions[i + 1]} \n`;
-			outputTable.push({ Type: titleDescriptions[i - 1], Name: titleDescriptions[i], Description: titleDescriptions[i + 1] });
-			let row = tableTitles.insertRow();
-			let cell1 = row.insertCell(0);
-			let cell2 = row.insertCell(1);
-			let cell3 = row.insertCell(2);
-			let cell4 = row.insertCell(3);
-
-			cell1.innerHTML = `${titleDescriptions[i - 2]}`;
-			cell2.innerHTML = `${titleDescriptions[i - 1]}`;
-			cell3.innerHTML = `${titleDescriptions[i]}`;
-			cell4.innerHTML = `${titleDescriptions[i + 1]}`;
+				cell1.innerHTML = `${titleDescriptions[i - 2]}`;
+				cell2.innerHTML = `${titleDescriptions[i - 1]}`;
+				cell3.innerHTML = `${titleDescriptions[i]}`;
+				cell4.innerHTML = `${titleDescriptions[i + 1]}`;
+			}
 		}
 	}
 
