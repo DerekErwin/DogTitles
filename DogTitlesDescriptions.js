@@ -1283,6 +1283,12 @@ const titleDescriptions = [
 	"NADAC Suffix", "Agility", "S-BR-O", "Superior Barrelers Open",
 	"NADAC Suffix", "Agility", "S-BR-E", "Superior Barrelers Elite",
 	"AHBA Suffix", "Herding", "JHD", "Junior Herding Dog",
+	"AHBA Prefix", "Herding", "HTCH", "Herding Trial Champion",
+	"AHBA Suffix", "Herding", "HTD", "Herding Trial Dog",
+	"AHBA Suffix", "Herding", "HRD", "Herding Ranch Dog",
+	"AHBA Suffix", "Herding", "RLF", "Ranch Large Flock",
+	"AHBA Suffix", "Herding", "HTAD", "Herding Trial Arena Dog",
+	"AHBA Suffix", "Herding", "HCT", "Herding Capability Test",
 ]
 
 
