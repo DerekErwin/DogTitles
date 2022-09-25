@@ -445,15 +445,15 @@ const titleDescriptions = [
 	"ASCA Prefix", "Conformation", "CH", "Champion",
 	"ASCA Prefix", "Conformation", "A-CH", "Altered Champion",
 	"ASCA Suffix", "Tracking", "TD", "Tracking Dog",
-	"ASCA Suffix", "Tracking", "TDx", "Tracking Dog Excellent",
+	"ASCA Suffix", "Tracking", "TDX", "Tracking Dog Excellent",
 	"ASCA Suffix", "Tracking", "TDU", "Tracking Dog Urban",
 	"ASCA Suffix", "Obedience", "BN", "Beginner Novice",
 	"ASCA Suffix", "Obedience", "GN", "Grad Novice",
 	"ASCA Suffix", "Obedience", "CD", "Companion Dog",
-	"ASCA Suffix", "Obedience", "CDx", "", "Companion Dog Excellent",
-	"ASCA Suffix", "Obedience", "ODx", "", "Open Dog Excellent",
+	"ASCA Suffix", "Obedience", "CDX", "", "Companion Dog Excellent",
+	"ASCA Suffix", "Obedience", "ODX", "", "Open Dog Excellent",
 	"ASCA Suffix", "Obedience", "UD", "Utility Dog",
-	"ASCA Suffix", "Obedience", "UDx", "", "Utility Dog Excellent (CDX Branch)",
+	"ASCA Suffix", "Obedience", "UDX", "", "Utility Dog Excellent (CDX Branch)",
 	"ASCA Suffix", "Obedience", "UDX-O", "Utility Dog Excellent (ODX Branch)",
 	"ASCA Suffix", "Obedience", "UDX-V", "Utility Dog Excellent Veterans",
 	"ASCA Prefix", "Obedience", "OTCH", "Obedience Champion (CDX Branch)",
@@ -1282,6 +1282,7 @@ const titleDescriptions = [
 	"NADAC Suffix", "Agility", "S-BR-N", "Superior Barrelers Novice",
 	"NADAC Suffix", "Agility", "S-BR-O", "Superior Barrelers Open",
 	"NADAC Suffix", "Agility", "S-BR-E", "Superior Barrelers Elite",
+	"AHBA Suffix", "Herding", "JHD", "Junior Herding Dog",
 ]
 
 
@@ -1341,7 +1342,7 @@ function descriptions(string) {
 	let description = "";
 	if (string !== "") {
 		for (let i = 0; i < titleDescriptions.length; i++) {
-			if (string == titleDescriptions[i]) {
+			if (string == titleDescriptions[i].toUpperCase()) {
 				description += `${titleDescriptions[i - 1]} - ${titleDescriptions[i]} - ${titleDescriptions[i + 1]} \n`;
 				outputTable.push({ Type: titleDescriptions[i - 1], Name: titleDescriptions[i], Description: titleDescriptions[i + 1] });
 				let row = tableTitles.insertRow();
