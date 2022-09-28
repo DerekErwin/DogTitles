@@ -1683,7 +1683,7 @@ titleCheckBtn.addEventListener('click', () => {
 		titlesHeader.removeAttribute("hidden");
 		tableTitles.removeAttribute("hidden");
 		instructions.removeAttribute("hidden");
-		instructions.innerText = "Click table headers to sort by that column:";
+		instructions.innerText = "Click the top of a column to sort by that column.";
 	} else {
 		titlesHeader.setAttribute("hidden", "hidden");
 		tableTitles.setAttribute("hidden", "hidden");
