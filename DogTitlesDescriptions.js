@@ -27,7 +27,7 @@ const titleDescriptions = [
 	"AKC Prefix", "Field Trial", "GAFC", "Grand Amateur Field Champion",
 	"AKC Prefix", "Field Trial", "GFC", "Grand Field Champion",
 	"AKC Prefix", "Herding Trial", "HC", "Herding Champion",
-	"AKC Prefix", "Agility Trial", "MACH", "Master Agility Champion",
+	"AKC Prefix", "Agility", "MACH", "Master Agility Champion",
 	"AKC Prefix", "National Agility Championship", "NAC", "National Agility Champion",
 	"AKC Prefix", "Field Trial", "NAFC", "National Amateur Field Champion",
 	"AKC Prefix", "Field Trial", "NAGDC", "National Amateur Gundog Champion",
